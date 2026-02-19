@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Visualizations — Srivithun Geetha Vinu</title>
+    <meta
+      name="description"
+      content="Assignment visualizations built with Vega-Lite and JavaScript."
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Vega / Vega-Lite / Embed (for IAT 355 charts) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <!-- Existing page scripts -->
+    <script defer src="vis.js"></script>
+
+    <!-- New: IAT 355 Assignment 3 charts -->
+    <script defer src="assignment3.js"></script>
+
+    <script defer src="main.js"></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Srivithun Geetha Vinu</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active" href="visualizations.html">Visualizations</a>
+          <button
+            class="btn btn-ghost"
+            type="button"
+            id="themeToggle"
+            aria-pressed="false"
+            aria-label="Toggle theme"
+          >
+            Theme
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h1>Visualizations</h1>
+          <p>
+            This page contains two SVG outputs created entirely with JavaScript
+            (<code>vis.js</code>), plus IAT 355 Vega-Lite visualizations embedded
+            using <code>vegaEmbed</code>.
+          </p>
+        </header>
+
+
+
+        <!-- ================= IAT 355 — Vega-Lite Visualizations ================= -->
+
+        <section class="viz-block" aria-label="IAT 355 Vega-Lite visualizations">
+          <h2 class="viz-title">IAT 355 — Video Game Sales (Vega-Lite)</h2>
+          <p class="muted viz-desc">
+            Four core explorations + follow-up charts, built in Vega-Lite and
+            embedded with JavaScript.
+          </p>
+
+          <!-- V1 -->
+          <section class="viz-block" aria-label="V1 Global Sales by Genre and Platform">
+            <h3 class="viz-title">V1) Global Sales by Genre and Platform</h3>
+            <p class="muted viz-desc">
+              Stacked bar chart showing total global sales by genre with platform
+              contributions (top 10 platforms to reduce clutter).
+            </p>
+            <div class="viz-canvas" id="vl_v1"></div>
+          </section>
+
+          <!-- V2 -->
+          <section class="viz-block" aria-label="V2 Sales Trends Over Time (PSP Action)">
+            <h3 class="viz-title">V2) Sales Trends Over Time — PSP Action</h3>
+            <p class="muted viz-desc">
+              Line chart of aggregated global sales over time for PSP Action games.
+            </p>
+            <div class="viz-canvas" id="vl_v2"></div>
+          </section>
+
+          <!-- V3 -->
+          <section class="viz-block" aria-label="V3 Regional Sales Share (PSP Action)">
+            <h3 class="viz-title">V3) Regional Sales Distribution — PSP Action</h3>
+            <p class="muted viz-desc">
+              Pie chart showing sales share across NA, EU, JP, and Other.
+            </p>
+            <div class="viz-canvas" id="vl_v3"></div>
+          </section>
+
+          <!-- V4 -->
+          <section class="viz-block" aria-label="V4 Company Dominance in Action Games">
+            <h3 class="viz-title">V4) Company Dominance in Action Games</h3>
+            <p class="muted viz-desc">
+              Bar chart grouping platforms into company ecosystems
+              (Sony/Nintendo/Microsoft/Other).
+            </p>
+            <div class="viz-canvas" id="vl_v4"></div>
+          </section>
+
+          <!-- Follow-up 1 -->
+          <section class="viz-block" aria-label="Follow-up 1 Average Sales per Game">
+            <h3 class="viz-title">Follow-up 1) Average Sales per Game — Genre × Platform</h3>
+            <p class="muted viz-desc">
+              Mean global sales per title to compare performance vs volume (top 10 platforms).
+            </p>
+            <div class="viz-canvas" id="vl_f1"></div>
+          </section>
+
+          <!-- Follow-up 2 -->
+          <section class="viz-block" aria-label="Follow-up 2 Sales vs Releases Over Time">
+            <h3 class="viz-title">Follow-up 2) PSP Action — Sales vs Releases Over Time</h3>
+            <p class="muted viz-desc">
+              Two lines: total sales per year vs number of releases per year.
+            </p>
+            <div class="viz-canvas" id="vl_f2"></div>
+          </section>
+
+          <!-- Follow-up 3 -->
+          <section class="viz-block" aria-label="Follow-up 3 Regional Share by Genre on PSP">
+            <h3 class="viz-title">Follow-up 3) PSP — Regional Share by Genre</h3>
+            <p class="muted viz-desc">
+              100% stacked bars comparing regional dependence across genres.
+            </p>
+            <div class="viz-canvas" id="vl_f3"></div>
+          </section>
+
+          <!-- Follow-up 4 -->
+          <section class="viz-block" aria-label="Follow-up 4 Company Sales Across Genres">
+            <h3 class="viz-title">Follow-up 4) Company Sales Across Genres</h3>
+            <p class="muted viz-desc">
+              Total global sales by genre, grouped by company ecosystem.
+            </p>
+            <div class="viz-canvas" id="vl_f4"></div>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="muted">© <span id="year"></span> Srivithun Geetha Vinu</p>
+      </div>
+    </footer>
+  </body>
+</html>
